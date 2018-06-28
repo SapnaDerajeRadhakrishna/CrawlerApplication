@@ -1,6 +1,6 @@
 package org.demo.application.exception;
 
-public class ResourceNotFoundException extends CrawlerBaseException {
+public class ResourceNotFoundException extends Exception {
 
 	private static final long serialVersionUID = -3184123950098862815L;
 
