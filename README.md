@@ -37,10 +37,12 @@ curl "http://localhost:8080//crawler/showResults"
 
 ### Sample Output
 
-curl -i -X GET -H "Content-type: application/json" "http://localhost:8080//crawler/showResults"
-HTTP/1.1 200 
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Thu, 28 Jun 2018 00:45:29 GMT
+curl -i -X GET -H "Content-type: application/json" "http://localhost:8080//crawler/showResults" <br/><br/>
+<code>
+HTTP/1.1 200  
+Content-Type: application/json;charset=UTF-8  
+Transfer-Encoding: chunked  
+Date: Thu, 28 Jun 2018 00:45:29 GMT  
 
-{"successCount":12,"failureCount":4,"totalRequests":16}
+{"successCount":12,"failureCount":4,"totalRequests":16}  
+</code>
