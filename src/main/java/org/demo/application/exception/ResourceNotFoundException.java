@@ -1,11 +1,8 @@
 package org.demo.application.exception;
 
-public class ResourceNotFoundException extends RuntimeException {
+public class ResourceNotFoundException extends CrawlerBaseException {
 
 	private static final long serialVersionUID = -3184123950098862815L;
-
-	public ResourceNotFoundException() {
-	}
 
 	public ResourceNotFoundException(String message) {
 		super(message);
@@ -19,8 +16,4 @@ public class ResourceNotFoundException extends RuntimeException {
 		super(cause);
 	}
 
-	public ResourceNotFoundException(String message, Throwable cause, boolean enableSuppression,
-			boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-	}
 }

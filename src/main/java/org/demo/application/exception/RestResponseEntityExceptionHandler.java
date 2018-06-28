@@ -1,6 +1,5 @@
-package org.demo.application.controller;
+package org.demo.application.exception;
 
-import org.demo.application.exception.ResourceNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

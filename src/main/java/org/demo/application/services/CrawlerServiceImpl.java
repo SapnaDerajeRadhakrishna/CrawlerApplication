@@ -8,23 +8,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class CrawlerServiceImpl implements CrawlerService {
 
-	@Value("${crawler.source.json}")
-	String sourceJson;
+	@Value("${crawler.root.url}")
+	String rootUrl;
 
 	@Autowired
 	Crawler crawler;
 
 	@Override
-	public Result getResults() {
-		// dummy
+	public Result getResults() throws ResourceNotFoundException {
+		// check if the root URL is accessible
+		crawler.checkConnection(rootUrl);
+		
 		Result result = new Result();
 		try {
-			result = crawler.getCrawlerCount(sourceJson);
+			result = crawler.getCrawlerCount(rootUrl);
 		} catch (IOException e) {
-			throw new ResourceNotFoundException();
+			log.error("IO Exception received ", e.getMessage());
+			throw new ResourceNotFoundException(e.getMessage());
 		}
 		return result;
 	}
