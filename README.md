@@ -31,7 +31,7 @@ In the parent folder
 In another terminal, trigger the below curl command
 
 ```
-curl "http://localhost:8080//crawler/showResults"
+curl -i -X GET -H "Content-type: application/json" "http://localhost:8080/crawler/showResults" 
 ```
 
 
